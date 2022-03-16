@@ -107,6 +107,7 @@ class ServerlessWebpackPrisma {
 
   getFunctionNamesForProcess() {
     const packageIndividually =
+      this.serverless.configurationInput &&
       this.serverless.configurationInput.package &&
       this.serverless.configurationInput.package.individually;
     return packageIndividually ? this.getAllNodeFunctions() : ['service'];
